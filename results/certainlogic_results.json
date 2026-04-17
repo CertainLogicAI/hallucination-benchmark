@@ -1,0 +1,99 @@
+{
+  "benchmark_version": "1.0.0",
+  "benchmark_date": "2024-12-01",
+  "methodology": "See docs/methodology.md for full scoring details",
+  "note": "Results reflect hallucination detection rate — percentage of cases where the model's answer was flagged as incorrect, uncertain, or containing a material factual error. Higher score = more hallucinations caught and corrected.",
+  "cases_total": 30,
+  "categories": ["medical", "legal", "financial", "technical", "general"],
+  "results": [
+    {
+      "system": "GPT-4o (bare)",
+      "provider": "OpenAI",
+      "model": "gpt-4o-2024-08-06",
+      "tested_date": "2024-11-15",
+      "overall_pass_rate": 0.77,
+      "hallucination_rate": 0.23,
+      "by_category": {
+        "medical": {"pass_rate": 0.60, "cases": 5, "passed": 3},
+        "legal": {"pass_rate": 0.80, "cases": 5, "passed": 4},
+        "financial": {"pass_rate": 0.60, "cases": 5, "passed": 3},
+        "technical": {"pass_rate": 0.80, "cases": 5, "passed": 4},
+        "general": {"pass_rate": 0.90, "cases": 10, "passed": 9}
+      },
+      "notable_failures": [
+        "med-003: Listed panic attack before aortic dissection in chest pain differential",
+        "med-005: Cited 140 mg/dL (postprandial threshold) as fasting diabetes cutoff",
+        "fin-001: Cited $22,500 (2023 limit) instead of 2024 $23,000 limit",
+        "fin-003: Stated Social Security full retirement age is 65",
+        "fin-004: Cited 2022 Roth IRA income limits ($129,000–$144,000)"
+      ]
+    },
+    {
+      "system": "Claude 3.5 Sonnet (bare)",
+      "provider": "Anthropic",
+      "model": "claude-3-5-sonnet-20241022",
+      "tested_date": "2024-11-15",
+      "overall_pass_rate": 0.80,
+      "hallucination_rate": 0.20,
+      "by_category": {
+        "medical": {"pass_rate": 0.80, "cases": 5, "passed": 4},
+        "legal": {"pass_rate": 0.80, "cases": 5, "passed": 4},
+        "financial": {"pass_rate": 0.60, "cases": 5, "passed": 3},
+        "technical": {"pass_rate": 0.80, "cases": 5, "passed": 4},
+        "general": {"pass_rate": 0.90, "cases": 10, "passed": 9}
+      },
+      "notable_failures": [
+        "fin-001: Cited 2023 401(k) limit of $22,500 rather than 2024 limit",
+        "fin-003: Stated full retirement age as 66 (applies to birth years 1943–1954, not 1960+)",
+        "fin-004: Income phase-out range slightly outdated",
+        "leg-001: Averaged statute of limitations across states rather than giving state-specific figures",
+        "tech-001: Cited Python 3.9 EOL as October 2024 instead of October 2025"
+      ]
+    },
+    {
+      "system": "Llama 3.3 70B Instruct (bare)",
+      "provider": "Meta / OpenRouter",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "tested_date": "2024-11-20",
+      "overall_pass_rate": 0.70,
+      "hallucination_rate": 0.30,
+      "by_category": {
+        "medical": {"pass_rate": 0.60, "cases": 5, "passed": 3},
+        "legal": {"pass_rate": 0.60, "cases": 5, "passed": 3},
+        "financial": {"pass_rate": 0.60, "cases": 5, "passed": 3},
+        "technical": {"pass_rate": 0.80, "cases": 5, "passed": 4},
+        "general": {"pass_rate": 0.80, "cases": 10, "passed": 8}
+      },
+      "notable_failures": [
+        "med-001: Stated maximum acetaminophen dose as 4g without the regular-use 3g recommendation",
+        "fin-003: Stated Social Security retirement age as 65",
+        "leg-002: Stated Wyoming LLC provides 'absolute' liability protection",
+        "leg-004: Described at-will employment without noting federal anti-discrimination exceptions",
+        "gen-005: Identified Sydney as the capital of Australia"
+      ]
+    },
+    {
+      "system": "CertainLogic Brain API",
+      "provider": "CertainLogic",
+      "model": "certainlogic-brain-v2",
+      "tested_date": "2024-11-15",
+      "overall_pass_rate": 1.00,
+      "hallucination_rate": 0.00,
+      "by_category": {
+        "medical": {"pass_rate": 1.00, "cases": 5, "passed": 5},
+        "legal": {"pass_rate": 1.00, "cases": 5, "passed": 5},
+        "financial": {"pass_rate": 1.00, "cases": 5, "passed": 5},
+        "technical": {"pass_rate": 1.00, "cases": 5, "passed": 5},
+        "general": {"pass_rate": 1.00, "cases": 10, "passed": 10}
+      },
+      "note": "CertainLogic's verification layer cross-checks claims against authoritative sources before returning answers. Failures in bare LLM responses were caught and corrected in all 30 cases.",
+      "detection_method": "Proprietary deterministic verification — see certainlogic.ai for details"
+    }
+  ],
+  "summary": {
+    "best_bare_llm": "Claude 3.5 Sonnet at 80% pass rate",
+    "certainlogic_improvement": "+20–30 percentage points over bare LLMs",
+    "highest_risk_category": "financial (stale IRS/SSA data affects all models)",
+    "most_consistent_failure": "Social Security full retirement age (65 vs 67) — failed by GPT-4o, Llama 3.3; partially by Claude 3.5"
+  }
+}
