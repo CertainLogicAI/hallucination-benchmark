@@ -1,5 +1,13 @@
 # CertainLogic Hallucination Benchmark
 
+> ⚠️ **This repo has moved.** The hallucination benchmark is now part of [CertainLogicAI/llm-benchmarks](https://github.com/CertainLogicAI/llm-benchmarks) — a consolidated repo with 4 benchmarks and 90 total cases (hallucination, freshness, cost, catch rate).
+>
+> **→ [github.com/CertainLogicAI/llm-benchmarks](https://github.com/CertainLogicAI/llm-benchmarks)**
+
+This repo remains available for reference. No further updates will be made here.
+
+---
+
 **30 real hallucination test cases. Run them against any LLM.**
 
 [![Tested by CertainLogic](https://img.shields.io/badge/Tested%20by-CertainLogic-blue?style=flat-square)](https://certainlogic.ai)
