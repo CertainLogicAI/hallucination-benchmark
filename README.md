@@ -1,10 +1,18 @@
 # CertainLogic Hallucination Benchmark
 
-> ⚠️ **This repo has moved.** The hallucination benchmark is now part of [CertainLogicAI/llm-benchmarks](https://github.com/CertainLogicAI/llm-benchmarks) — a consolidated repo with 4 benchmarks and 90 total cases (hallucination, freshness, cost, catch rate).
+> ⚠️ **STATUS: ARCHIVED. This benchmark has been withdrawn.**
 >
-> **→ [github.com/CertainLogicAI/llm-benchmarks](https://github.com/CertainLogicAI/llm-benchmarks)**
+> The CertainLogic Brain API results claimed in this repo (100% pass rate) were produced using a proprietary verification system that could not be independently verified. The benchmark methodology has since been found inadequate for making comparative claims between systems.
+>
+> **Do not cite these results as evidence of CertainLogic product performance.**
+>
+> The hallucination test cases themselves (30 factual questions) remain valid and may be useful for testing LLM behavior independently. See [`CertainLogicAI/llm-benchmarks`](https://github.com/CertainLogicAI/llm-benchmarks) for withdrawn successor benchmarks.
+>
+> This repo is archived for transparency. No further updates.
 
-This repo remains available for reference. No further updates will be made here.
+---
+
+> ⚠️ **This repo's original claims have moved.** The hallucination benchmark was previously part of a consolidated effort at [CertainLogicAI/llm-benchmarks](https://github.com/CertainLogicAI/llm-benchmarks), which has also been withdrawn. See that repo for its own status.
 
 ---
 
