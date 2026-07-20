@@ -14,6 +14,8 @@ Published April 2026. 30 factual questions across medical, legal, financial, tec
 
 These test cases measure **confident incorrect responses** — the failure mode where an LLM sounds sure but is wrong.
 
+> **Regulated Industries Disclaimer:** This benchmark evaluates factual correctness on a limited set of test cases. It is not a clinical, legal, financial, or compliance validation. The test cases and results are provided for research and benchmarking purposes only and do not constitute professional advice. Do not use these results as the sole basis for deployment decisions in regulated environments.
+
 ## Benchmark Results (April 2026 Run)
 
 | System | Medical | Legal | Financial | Technical | General | **Overall** |
@@ -22,7 +24,7 @@ These test cases measure **confident incorrect responses** — the failure mode 
 | Claude 3.5 Sonnet (bare) | 80% | 80% | 60% | 80% | 90% | **80%** |
 | Llama 3.3 70B (bare) | 60% | 60% | 60% | 80% | 80% | **70%** |
 | Claude Opus 4 | ~100% | ~100% | ~100% | ~100% | ~100% | ~100% |
-| **CertainLogic Brain API** | **100%** | **100%** | **100%** | **100%** | **100%** | **100%** |
+| **CertainLogic Brain API** (internal evaluation) | **100%** | **100%** | **100%** | **100%** | **100%** | **100%** |
 
 > Full results with per-case breakdowns: [`results/certainlogic_results.json`](results/certainlogic_results.json)
 
