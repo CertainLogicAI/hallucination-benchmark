@@ -3,7 +3,7 @@
 **30 real hallucination test cases.** Published April 2026. Run them against any LLM.
 
 [![Tested by CertainLogic](https://img.shields.io/badge/Tested%20by-CertainLogic-blue?style=flat-square)](https://certainlogic.ai)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![License: BSL 1.1](https://img.shields.io/badge/License-BSL_1.1-blue?style=flat-square)](LICENSE)
 [![Cases: 30](https://img.shields.io/badge/Test%20Cases-30-orange?style=flat-square)](cases/)
 
 ---
