@@ -16,6 +16,14 @@ These test cases measure **confident incorrect responses** — the failure mode 
 
 > **Regulated Industries Disclaimer:** This benchmark evaluates factual correctness on a limited set of test cases. It is not a clinical, legal, financial, or compliance validation. The test cases and results are provided for research and benchmarking purposes only and do not constitute professional advice. Do not use these results as the sole basis for deployment decisions in regulated environments.
 
+## Important Caveat — Before You Read the Results
+
+**CertainLogic Brain API results are proprietary.** The Brain API is a closed, commercial system developed by CertainLogic. Its results in this benchmark are from an April 2026 internal run. They cannot be independently reproduced without API access and are included for reference only.
+
+**Bare-LLM results (GPT-4o, Claude, Llama)** are independently reproducible with your own API keys. All test cases, scoring criteria, and runner code are included in this repository.
+
+This benchmark measures one dimension (factual correctness on 30 questions). It is not a comprehensive quality assessment. See the Regulated Industries Disclaimer below.
+
 ## Benchmark Results (April 2026 Run)
 
 | System | Medical | Legal | Financial | Technical | General | **Overall** |
@@ -24,13 +32,11 @@ These test cases measure **confident incorrect responses** — the failure mode 
 | Claude 3.5 Sonnet (bare) | 80% | 80% | 60% | 80% | 90% | **80%** |
 | Llama 3.3 70B (bare) | 60% | 60% | 60% | 80% | 80% | **70%** |
 | Claude Opus 4 | ~100% | ~100% | ~100% | ~100% | ~100% | ~100% |
-| **CertainLogic Brain API** (internal evaluation) | **100%** | **100%** | **100%** | **100%** | **100%** | **100%** |
+| **CertainLogic Brain API** (proprietary — see caveat above) | **100%**​* | **100%**​* | **100%**​* | **100%**​* | **100%**​* | **100%**​* |
+
+_* Brain API results are from an internal run and not independently verifiable._
 
 > Full results with per-case breakdowns: [`results/certainlogic_results.json`](results/certainlogic_results.json)
-
-**About these results:**
-- **Bare-LLM results** (GPT-4o, Claude, Llama): Run via live API calls. Independently reproducible with your own keys.
-- **CertainLogic Brain API:** Proprietary system. Results from April 2026 run. This system is not independently verifiable without API access.
 
 **What the test cases measure:** Factual correctness on questions with verifiable answers. A system that says "I don't know" scores lower than one that answers correctly. This is one dimension of evaluation, not a comprehensive quality assessment.
 
